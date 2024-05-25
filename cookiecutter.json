@@ -1,0 +1,7 @@
+{
+    "project_name": "Ludic App",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "author_name": "Your Name",
+    "author_email": "you@example.com",
+    "description": "An app built with Ludic"
+}
