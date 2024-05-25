@@ -4,6 +4,8 @@ from contextlib import asynccontextmanager
 from ludic.html import style
 from ludic.web import LudicApp
 from ludic.styles import themes, types
+from ludic.web.routing import Mount
+from starlette.staticfiles import StaticFiles
 
 
 themes.set_default_theme(
@@ -20,7 +22,11 @@ async def lifespan(_: LudicApp) -> AsyncIterator[None]:
     yield
 
 
-app = LudicApp(debug=True, lifespan=lifespan)
+app = LudicApp(
+    debug=True,
+    lifespan=lifespan,
+    routes=[Mount("/static", StaticFiles(directory="static"), name="static")],
+)
 
 
 import src.endpoints.index as _  # noqa

@@ -3,7 +3,7 @@ from typing import override
 from ludic.attrs import GlobalAttrs
 from ludic.catalog.layouts import Center, Stack
 from ludic.catalog.pages import Body, Head, HtmlPage
-from ludic.html import meta
+from ludic.html import meta, link
 from ludic.types import AnyChildren, Component
 
 
@@ -13,6 +13,7 @@ class Page(Component[AnyChildren, GlobalAttrs]):
         return HtmlPage(
             Head(
                 meta(charset="utf-8"),
+                link(rel="icon", href="/static/favicon.png"),
                 title="{{ cookiecutter.project_name }}",
             ),
             Body(
