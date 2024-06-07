@@ -29,5 +29,5 @@ app = LudicApp(
 )
 
 
-import src.endpoints.index as _  # noqa
-import src.endpoints.errors as _  # noqa
+import src.endpoints.index  # noqa
+import src.endpoints.errors  # noqa
