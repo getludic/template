@@ -1,6 +1,6 @@
 # Ludic App Template
 
-This is a basic cookiecutter template for [Ludic App](https://github.com/paveldedik/ludic).
+This is a basic cookiecutter template for [Ludic App](https://github.com/getludic/ludic).
 
 ## Using The Template
 
@@ -8,5 +8,5 @@ This is a basic cookiecutter template for [Ludic App](https://github.com/pavelde
 2. Run the following command to create a new project:
 
 ```
-cookiecutter gh:paveldedik/ludic-template
+cookiecutter gh:getludic/template
 ```
