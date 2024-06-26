@@ -3,8 +3,9 @@ from typing import override
 from ludic.attrs import GlobalAttrs
 from ludic.catalog.layouts import Center, Stack
 from ludic.catalog.pages import Body, Head, HtmlPage
+from ludic.components import Component
 from ludic.html import meta, link
-from ludic.types import AnyChildren, Component
+from ludic.types import AnyChildren
 
 
 class Page(Component[AnyChildren, GlobalAttrs]):

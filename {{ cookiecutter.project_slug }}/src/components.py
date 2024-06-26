@@ -1,9 +1,9 @@
 from typing import override
 
-from ludic.attrs import Attrs
+from ludic import Attrs, Component
 from ludic.catalog.layouts import Box
 from ludic.html import b
-from ludic.types import Component, NoChildren
+from ludic.types import NoChildren
 
 
 class HelloAttrs(Attrs):

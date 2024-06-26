@@ -1,8 +1,8 @@
 from ludic.catalog.headers import H1
 from ludic.catalog.typography import Paragraph
 
-from src.pages import Page
 from src.main import app
+from src.pages import Page
 
 
 @app.exception_handler(404)
