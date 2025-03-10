@@ -4,29 +4,30 @@
 
 ## Running the App
 
-Using Poetry (recommended):
+Using UV (recommended):
 
 ```
-poetry install
-poetry run uvicorn --reload src.main:app
+uv venv --python 3.13
+uv sync
+uv run uvicorn --reload src.main:app
 ```
 
-Or without Poetry:
+Or without UV:
 
 ```
-pip install .
+pip install -e .
 uvicorn --reload src.main:app
 ```
 
 ## Running the Tests
 
-Using Poetry (recommended):
+Using UV (recommended):
 
 ```
-poetry run pytest
+uv run pytest
 ```
 
-Or without Poetry:
+Or without UV:
 
 ```
 pytest

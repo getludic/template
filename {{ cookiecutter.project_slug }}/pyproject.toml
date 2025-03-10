@@ -1,29 +1,39 @@
-[tool.poetry]
+[project]
 name = "{{ cookiecutter.project_slug }}"
 version = "0.1.0"
 description = "{{ cookiecutter.description }}"
 authors = [
-    "{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>"
+    { name = "{{ cookiecutter.author_name }}", email ="{{ cookiecutter.author_email }}" }
 ]
-packages = [{ include = "src" }]
 readme = "README.md"
+dependencies = [
+    "ludic[full]",
+    "uvicorn",
+]
+requires-python = ">=3.12"
 
-[tool.poetry.dependencies]
-python = "^3.12"
-ludic = { extras = ["full"], version = "^0.5.0" }
-uvicorn = "^0.27.0"
-
-[tool.poetry.group.dev.dependencies]
-mypy = "^1.10.0"
-pytest = "^8.2.1"
-httpx = "^0.27.0"
+[tool.uv]
+dev-dependencies =[
+    "mypy",
+    "pytest",
+    "httpx",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "README.md", "pyproject.toml"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
 
 [tool.mypy]
-python_version = "3.12"
+python_version = "3.13"
 strict = true
 disallow_subclassing_any = false
 plugins = "ludic.mypy_plugin"
